@@ -27,7 +27,7 @@
 
 /* Flex Box ------------------------ */
 
- fieldset, footer, .item {
+ fieldset, footer, .item, .zip {
   display: flex;
   flex-direction: column;
 }
@@ -54,12 +54,14 @@ h2 {
 }
 
 .form {
+  font-size: 1em;
+  font-weight: 600;
   text-align: left;
   margin-bottom: 10px;
 }
 
 p {
-  margin: 15px auto;
+  margin: 15px 10px;
   font-size: 0.75em;
   font-weight: 100;
   color: rgb(182, 182, 182);
@@ -69,12 +71,13 @@ label, .news {
   margin: 10px 0;
   font-size: 0.75em;
   font-weight: 100;
+  text-align: left;
   color: rgb(94, 94, 94);
 }
 
 input::placeholder, textarea::placeholder {
-    font-style: italic;
-    text-align: right;
+  font-style: italic;
+  text-align: right;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], textarea {
@@ -141,9 +144,9 @@ div.double, div.single {
   border-top: 1px solid black;
 }
 
-/* Focus States ----------------------------------------------------------- */
+/* Focus States and Animations ----------------------------------------------------------- */
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
   background-color: rgb(161, 160, 160);
   transition: all 0.5s ease-out;
 }
@@ -160,7 +163,7 @@ button:hover {
 
 /* Media Queries 768px  ----------------------------------------------------*/
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
 
   /* Layout Styles ---------------------------------------------------------*/
 
@@ -169,11 +172,8 @@ button:hover {
     max-width: 760px;
   }
  
-  #zipcode {
-    max-width: 25%;
-  }
-
-  .letter, .info {
+  
+   .info {
     background-color: hsl(0, 0%, 96%);
     border-radius: 5px;
     
@@ -185,6 +185,19 @@ button:hover {
   
 
   /* Flexbox ---------------------------------------------------------*/
+
+  .zip {
+    display: flex;
+    flex-direction: row;
+  }
+
+  label[for="zipcode"] {
+    max-width: 30%; 
+  }
+
+   #zipcode {
+    max-width: 17.5%;
+  }
 
  .item, .news {
     display: flex;
@@ -200,4 +213,6 @@ button:hover {
     flex-grow: 3;
     max-width: 70%;
   }
+
+
 }
